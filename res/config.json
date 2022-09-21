@@ -1,0 +1,72 @@
+// json不允许添加注释，不过为了配置方便，本插件做了处理，注释并不会对插件功能造成影响。
+// comment字段仅用作填写备注，包括npc名字、物品名称、随机事件备注，可不填或删除。
+
+// 参考和支持
+// 插件说明：https://www.yuque.com/hufang/bv/tshock-trash-man
+// 联系方式：https://space.bilibili.com/4328524
+// 数据查询：https://docs.qq.com/sheet/DTmxvcXpFSHZOSHNF
+
+{
+    "chest":[
+        {
+            "id":369,
+            "comment":"渔夫",
+            "name":"鱼篓",
+            "item":[
+                {"id":2337, "percent":50, "comment":"旧鞋"},
+                {"id":2338, "percent":50, "comment":"海草"},
+                {"id":2339, "percent":50, "comment":"锡罐"},
+                {"id":4608, "percent":1, "stack": 10, "comment":"鱼饵桶"},
+                {"id":2332, "percent":1, "prefix": 50, "comment":"剑鱼"},
+                {"id":2356, "percent":1, "stack": 2, "comment":"宝匣药水"}
+            ],
+            "event":[
+                {"type":1, "id":156, "num": 10, "comment":"石化", "msg":"{player} 在翻垃圾桶的时候受到诅咒，被石化了！","serverMsg":true},
+                {"type":1, "id":149, "num": 10, "comment":"被网住了", "msg":"{player} 在翻垃圾桶的时候被网住了！","serverMsg":true},
+                {"type":1, "id":120, "num": 60, "comment":"恶臭", "msg":"空气中弥漫着一股鱼腥味！", "serverMsg":true},
+                {"type":2, "id":51, "num": 3, "comment":"3只蝙蝠", "unlock":["史王"], "msg":"{player} 在翻垃圾桶的时候，发现了一群蝙蝠！","serverMsg":true},
+                {"type":2, "id":300, "num": 1, "comment":"1只老鼠", "msg":"有只老鼠[i:2003]跑了出来，吱，吱，吱~"}
+            ]
+        },
+        {
+            "id":22,
+            "comment":"向导",
+            "name":"功德箱",
+            "type":5,
+            "item":[
+                {"id":2338, "percent":80, "comment":"海草"},
+                {"id":3507, "stack":88, "percent":20, "comment":"银币"},
+                {"id":890, "percent":1, "unlock":["肉后"], "comment":"扩音器"}
+            ],
+            "event":[
+                {"type":1, "id":23, "num":5, "comment":"被诅咒", "msg":"{player} 被诅咒了！","serverMsg":true},
+                {"type":1, "id":111, "num":5, "comment":"危险感", "msg":"泰拉小镇，惊现梁上君子！","serverMsg":true},
+                {"type":1, "id":58, "num":5, "comment":"快速治疗", "msg":"阿弥陀佛，善哉，善哉 ！"},
+                {"type":2, "id":300, "num":1, "comment":"1只老鼠", "msg":"呀，是一只老鼠[i:2003]，向导家的猫呢？"},
+                {"type":3, "id":73, "num":2, "comment":"掉落2金币", "msg":"相逢即是有缘"}
+            ]
+        },
+        {
+            "id":18,
+            "comment":"护士",
+            "name":"医疗垃圾",
+            "type":11,
+            "item":[
+                {"id":126, "stack":2, "percent":80, "comment":"水瓶"},
+                {"id":28, "stack":2, "percent":50, "comment":"弱效治疗药水"},
+                {"id":188, "stack":2, "percent":20, "comment":"治疗药水"},
+                {"id":3544, "stack":2, "percent":10, "unlock":["肉后"], "comment":"超级治疗药水"},
+                {"id":226, "stack":2, "percent":50, "comment":"恢复药水"},
+                {"id":29, "percent":1, "comment":"生命水晶"}
+            ],
+            "event":[
+                {"type":1, "id":20, "num":5, "comment":"中毒", "msg":"护士说医疗垃圾有毒，但是 {player} 偏不信！","serverMsg":true},
+                {"type":1, "id":67, "num":5, "comment":"燃烧", "msg":"发生医疗事故啦，{player} 被烧伤了！","serverMsg":true},
+                {"type":1, "id":103, "num":5, "comment":"潮湿", "msg":"泰拉水深！"},
+                {"type":1, "id":58, "num":5, "comment":"快速治疗", "msg":"愿主保佑你，阿门 ！"},
+                {"type":2, "id":300, "num":1, "comment":"1只老鼠", "msg":"呀，是一只老鼠[i:2003]，吱，吱，吱~"},
+                {"type":3, "id":73, "num":2, "comment":"掉落2金币", "msg":"诶嘿，捡到一个红包！"}
+            ]
+        }
+    ]
+}
