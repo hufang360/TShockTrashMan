@@ -148,7 +148,7 @@ namespace TrashMan
                 case "光之女皇": case "光女": if (!NPC.downedEmpressOfLight) pass = false; break;
                 case "猪龙鱼公爵": case "猪鲨": if (!NPC.downedFishron) pass = false; break;
                 case "拜月教邪教徒": case "教徒": if (!NPC.downedAncientCultist) pass = false; break;
-                case "月亮领主": if (!NPC.downedMoonlord) pass = false; break;
+                case "月亮领主": case "月后": if (!NPC.downedMoonlord) pass = false; break;
                 case "哀木": if (!NPC.downedHalloweenTree) pass = false; break;
                 case "南瓜王": if (!NPC.downedHalloweenKing) pass = false; break;
                 case "常绿尖叫怪": if (!NPC.downedChristmasTree) pass = false; break;
@@ -228,8 +228,20 @@ namespace TrashMan
         // 百分比
         public int percent = 50;
 
+        // 通知
+        public string msg = "";
+
+        // 是否为全服通知
+        public bool serverMsg = false;
+
         // 解锁条件
         public List<string> unlock = new List<string>();
+
+
+        public void Trans(TSPlayer op)
+        {
+            msg = msg.Replace("{player}", op.Name);
+        }
     }
 
 

@@ -18,7 +18,7 @@
                 {"id":2339, "percent":50, "comment":"锡罐"},
                 {"id":4608, "percent":1, "stack": 10, "comment":"鱼饵桶"},
                 {"id":2332, "percent":1, "prefix": 50, "comment":"剑鱼"},
-                {"id":2356, "percent":1, "stack": 2, "comment":"宝匣药水"}
+                {"id":2356, "percent":1, "stack": 2, "comment":"宝匣药水", "msg":"{player} 在垃圾桶里找到了宝匣药水[i:2356]！","serverMsg":true}
             ],
             "event":[
                 {"type":1, "id":156, "num": 10, "comment":"石化", "msg":"{player} 在翻垃圾桶的时候受到诅咒，被石化了！","serverMsg":true},

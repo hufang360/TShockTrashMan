@@ -45,7 +45,7 @@ namespace TrashMan
             ServerApi.Hooks.NetGetData.Register(this, OnGetData);
             ServerApi.Hooks.GameUpdate.Register(this, OnGameUpdate);
 
-            GeneralHooks.ReloadEvent += OnReload;
+            //GeneralHooks.ReloadEvent += OnReload;
 
             if (!Directory.Exists(saveDir)) Directory.CreateDirectory(saveDir);
             Reload();
@@ -117,8 +117,14 @@ namespace TrashMan
 
             // 仅限 指定类型的箱子
             int chestType = _config.chest[cIndex].type > 0 ? _config.chest[cIndex].type : 6;
-            utils.Log($"{(chestType) * 36}");
-            if (Main.tile[tileX, tileY].frameX != (chestType) * 36 && Main.tile[tileX, tileY].frameX != 0) return;
+            if (chestType >= 46701)
+            {
+                if (Main.tile[tileX, tileY].frameX != (chestType - 46701) * 36 && Main.tile[tileX, tileY].frameX != 0) return;
+            }
+            else
+            {
+                if (Main.tile[tileX, tileY].frameX != (chestType) * 36 && Main.tile[tileX, tileY].frameX != 0) return;
+            }
 
             ChestData chData = _config.chest[cIndex];
 
@@ -166,6 +172,15 @@ namespace TrashMan
                         ch.item[0].netID = gifts[i].id;
                         ch.item[0].prefix = (byte)gifts[i].prefix;
                         ch.item[0].stack = gifts[i].stack;
+
+                        gifts[i].Trans(op);
+                        if (!string.IsNullOrEmpty(gifts[i].msg))
+                        {
+                            if (gifts[i].serverMsg)
+                                TSPlayer.All.SendInfoMessage(gifts[i].msg);
+                            else
+                                op.SendInfoMessage(gifts[i].msg);
+                        }
                         break;
                     }
                 }
@@ -195,10 +210,13 @@ namespace TrashMan
                         case 3: op.GiveItem(tce.id, tce.num); break;
                     }
 
-                    if (tce.serverMsg)
-                        TSPlayer.All.SendInfoMessage(tce.msg);
-                    else
-                        op.SendInfoMessage(tce.msg);
+                    if (!string.IsNullOrEmpty(tce.msg))
+                    {
+                        if (tce.serverMsg)
+                            TSPlayer.All.SendInfoMessage(tce.msg);
+                        else
+                            op.SendInfoMessage(tce.msg);
+                    }
                 }
             }
         }
@@ -243,7 +261,7 @@ namespace TrashMan
                 ServerApi.Hooks.NetGetData.Deregister(this, OnGetData);
                 ServerApi.Hooks.GameUpdate.Deregister(this, OnGameUpdate);
 
-                GeneralHooks.ReloadEvent -= OnReload;
+                //GeneralHooks.ReloadEvent -= OnReload;
             }
             base.Dispose(disposing);
         }
