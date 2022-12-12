@@ -11,7 +11,8 @@
         {
             "id":369,
             "comment":"渔夫",
-            "name":"鱼篓",
+            "name":"渔夫家的垃圾桶",
+            "type":5,
             "item":[
                 {"id":2337, "percent":50, "comment":"旧鞋"},
                 {"id":2338, "percent":50, "comment":"海草"},
@@ -31,7 +32,7 @@
         {
             "id":22,
             "comment":"向导",
-            "name":"功德箱",
+            "name":"向导家的垃圾桶",
             "type":5,
             "item":[
                 {"id":2338, "percent":80, "comment":"海草"},
@@ -49,8 +50,8 @@
         {
             "id":18,
             "comment":"护士",
-            "name":"医疗垃圾",
-            "type":11,
+            "name":"护士家的垃圾桶",
+            "type":5,
             "item":[
                 {"id":126, "stack":2, "percent":80, "comment":"水瓶"},
                 {"id":28, "stack":2, "percent":50, "comment":"弱效治疗药水"},

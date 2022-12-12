@@ -116,7 +116,7 @@ namespace TrashMan
 
 
             // 仅限 指定类型的箱子
-            int chestType = _config.chest[cIndex].type > 0 ? _config.chest[cIndex].type : 6;
+            int chestType = _config.chest[cIndex].type > 0 ? _config.chest[cIndex].type : 5;
             if (chestType >= 46701)
             {
                 if (Main.tile[tileX, tileY].frameX != (chestType - 46701) * 36 && Main.tile[tileX, tileY].frameX != 0) return;
@@ -232,7 +232,7 @@ namespace TrashMan
                 // 5秒内不重复更新
                 if (utils.GetUnixTimestamp - t1 < 5) return;
 
-                utils.Log("新的一天开始了，垃圾佬狂喜~");
+                //utils.Log("新的一天开始了，垃圾佬狂喜~");
                 records.Clear();
                 t1 = utils.GetUnixTimestamp;
             }
