@@ -19,8 +19,7 @@
 
 
 ## 插件下载
-插件在 TShock v4.5.18（Terraria 1.4.3.6）环境下测试通过。<br>
-插件下载：[TrashMan_V1.0.dll](https://gitee.com/hufang360/TShockTrashMan/releases/download/v1.0/TrashMan_V1.0.dll)
+插件下载：[TrashMan-1.1.dll](https://github.com/hufang360/TShockTrashMan/releases/download/v1.1/TrashMan-v1.1.dll)
 
 <br>
 
