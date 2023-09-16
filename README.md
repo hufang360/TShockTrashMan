@@ -27,7 +27,7 @@
 安装插件后，启动服务器时会自动生成配置文件，路径位于 `./tshock/TrashMan/config.json`，此文件和本项目的 [./res/config.json](./res/config.json) 文件相同。<br>
 
 配置说明：
-```json
+```jsonc
 {
     // （这个是备注，目的是说明各个字段，实际配置这样写会出错）
     "chest": [
